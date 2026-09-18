@@ -1,0 +1,21 @@
+# Created by venv; see https://docs.python.org/3/library/venv.html
+
+
+# Base de datos
+spotify_data.db
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Entornos virtuales
+venv/
+.venv/
+env/
+
+# macOS
+.DS_Store
+
+# Variables de entorno
+.env
+.env.*
