@@ -11890,3 +11890,83 @@ requests.exceptions.ConnectionError: HTTPSConnectionPool(host='accounts.spotify.
 ✅ Base de datos e infraestructura listas.
 🎧 Extrayendo historial reciente de Spotify...
 ✅ Se guardaron 0 reproducciones nuevas.
+HTTP Error for GET to https://api.spotify.com/v1/me/player/recently-played with Params: {'limit': 50, 'after': None, 'before': None} returned 403 due to Active premium subscription required for the owner of the app. When the subscription status changes, it can take a few hours before requests are allowed again.
+✅ Base de datos e infraestructura listas.
+🎧 Extrayendo historial reciente de Spotify...
+❌ Error durante el ETL: http status: 403, code: -1 - https://api.spotify.com/v1/me/player/recently-played?limit=50:
+ Active premium subscription required for the owner of the app. When the subscription status changes, it can take a few hours before requests are allowed again., reason: None
+Traceback (most recent call last):
+  File "/Users/tilin/spotify_analytics/venv/lib/python3.13/site-packages/spotipy/client.py", line 271, in _internal_call
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/tilin/spotify_analytics/venv/lib/python3.13/site-packages/requests/models.py", line 1167, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: https://api.spotify.com/v1/me/player/recently-played?limit=50
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/tilin/spotify_analytics/etl_pipeline.py", line 174, in <module>
+    ejecutar_etl()
+    ~~~~~~~~~~~~^^
+  File "/Users/tilin/spotify_analytics/etl_pipeline.py", line 150, in ejecutar_etl
+    resultado = spotify.current_user_recently_played(limit=50)
+  File "/Users/tilin/spotify_analytics/venv/lib/python3.13/site-packages/spotipy/client.py", line 1650, in current_user_recently_played
+    return self._get(
+           ~~~~~~~~~^
+        "me/player/recently-played",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        before=before,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/tilin/spotify_analytics/venv/lib/python3.13/site-packages/spotipy/client.py", line 321, in _get
+    return self._internal_call("GET", url, payload, kwargs)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tilin/spotify_analytics/venv/lib/python3.13/site-packages/spotipy/client.py", line 291, in _internal_call
+    raise SpotifyException(
+    ...<5 lines>...
+    )
+spotipy.exceptions.SpotifyException: http status: 403, code: -1 - https://api.spotify.com/v1/me/player/recently-played?limit=50:
+ Active premium subscription required for the owner of the app. When the subscription status changes, it can take a few hours before requests are allowed again., reason: None
+HTTP Error for GET to https://api.spotify.com/v1/me/player/recently-played with Params: {'limit': 50, 'after': None, 'before': None} returned 403 due to Active premium subscription required for the owner of the app. When the subscription status changes, it can take a few hours before requests are allowed again.
+✅ Base de datos e infraestructura listas.
+🎧 Extrayendo historial reciente de Spotify...
+❌ Error durante el ETL: http status: 403, code: -1 - https://api.spotify.com/v1/me/player/recently-played?limit=50:
+ Active premium subscription required for the owner of the app. When the subscription status changes, it can take a few hours before requests are allowed again., reason: None
+Traceback (most recent call last):
+  File "/Users/tilin/spotify_analytics/venv/lib/python3.13/site-packages/spotipy/client.py", line 271, in _internal_call
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/tilin/spotify_analytics/venv/lib/python3.13/site-packages/requests/models.py", line 1167, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: https://api.spotify.com/v1/me/player/recently-played?limit=50
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/tilin/spotify_analytics/etl_pipeline.py", line 174, in <module>
+    ejecutar_etl()
+    ~~~~~~~~~~~~^^
+  File "/Users/tilin/spotify_analytics/etl_pipeline.py", line 150, in ejecutar_etl
+    resultado = spotify.current_user_recently_played(limit=50)
+  File "/Users/tilin/spotify_analytics/venv/lib/python3.13/site-packages/spotipy/client.py", line 1650, in current_user_recently_played
+    return self._get(
+           ~~~~~~~~~^
+        "me/player/recently-played",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        before=before,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/tilin/spotify_analytics/venv/lib/python3.13/site-packages/spotipy/client.py", line 321, in _get
+    return self._internal_call("GET", url, payload, kwargs)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tilin/spotify_analytics/venv/lib/python3.13/site-packages/spotipy/client.py", line 291, in _internal_call
+    raise SpotifyException(
+    ...<5 lines>...
+    )
+spotipy.exceptions.SpotifyException: http status: 403, code: -1 - https://api.spotify.com/v1/me/player/recently-played?limit=50:
+ Active premium subscription required for the owner of the app. When the subscription status changes, it can take a few hours before requests are allowed again., reason: None
