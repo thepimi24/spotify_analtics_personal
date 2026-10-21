@@ -39,11 +39,13 @@ Que función tiene cada archivo de código que he subido:
 - diagnostico.py: Detecta las canciones que tienen una mismo nombre y artista pero con diferente ID (ejemplo: Take My Breath - The Weeknd; tiene un id como sencillo y luego tiene otro id como parte del album DAWN FN) y detecta el duplicado si existe y compara la zona horaria para saber si la canción forma parte del conteo en su semana o de otra (solo en casos si el día metricado es el domingo en la noche, huso horario +0)
 - enrich_tracks.py: Enriquece cada canción escuchada dentro de su album, siempre detectando si la canción forma parte de un álbum, en bloques de 60 * 60, ya que la data de Spotify no enriquece esa data con los álbumes respectivamente.
 - fix_albumes.py: Este un código de limpieza para unificar los sencillos con sus respectivos albumes, para que pueda formar parte de las métricas de los álbumes.
-- fix_artista.py: Código de limpieza que resuelve la unificación de los artistas con diferentes ID y funciona duplicados
+- fix_artist.py: Código de limpieza que resuelve la unificación de los artistas con diferentes ID y funciona duplicados
 - fix_track_id.py: Código de limpieza que resuelve la unificación de IDS duplicados de las canciones.
 - spotify_listener.py: Al correr este código registra en tiempo real cada canción reproducida en un lapsus de 30 segundos por cada ciclo.
 
 Como ejecutar este proyecto?
+
+LOCALHOST VERSION
 
 - Inicia sesión en Spotify
 - Crea una sesión de Spotify Developers.
@@ -52,3 +54,9 @@ Como ejecutar este proyecto?
 - Crea los códigos de los proyectos 
 - Ejecuta los códigos del proyecto dentro de su espacio virtual (venv) si no, no ejecutaran.
 - Por ultimo, ejecuta el dashboard bajo la librería streamlit: streamlit run dashboard.py
+
+PRODUCTION VERSION
+
+En el siguiente URL: ferspotify.streamlit.app
+
+Podrías ingresar y ver el resultado final del dashboard completo donde se almacena el pipeline de datos.
